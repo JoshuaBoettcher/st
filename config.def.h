@@ -5,11 +5,11 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = "Liberation Mono:pixelsize=21:antialias=true:autohint=true";
 #if FONT2_PATCH
 /* Spare fonts */
 static char *font2[] = {
-/*	"Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", */
+/*	"Inconsolata for Powerline:pixelsize=21:antialias=true:autohint=true", */
 /*	"Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true", */
 };
 #endif // FONT2_PATCH
@@ -33,8 +33,6 @@ static int borderpx = 2;
 #endif // RELATIVEBORDER_PATCH
 
 #if OPENURLONCLICK_PATCH
-/* modkey options: ControlMask, ShiftMask or XK_ANY_MOD */
-static uint url_opener_modkey = XK_ANY_MOD;
 static char *url_opener = "xdg-open";
 #endif // OPENURLONCLICK_PATCH
 
@@ -389,12 +387,6 @@ static MouseShortcut maltshortcuts[] = {
 static char *openurlcmd[] = { "/bin/sh", "-c",
 	"xurls | dmenu -l 10 -w $WINDOWID | xargs -r open",
 	"externalpipe", NULL };
-
-#if EXTERNALPIPEIN_PATCH // example command
-static char *setbgcolorcmd[] = { "/bin/sh", "-c",
-	"printf '\033]11;#008000\007'",
-	"externalpipein", NULL };
-#endif // EXTERNALPIPEIN_PATCH
 #endif // EXTERNALPIPE_PATCH
 
 static Shortcut shortcuts[] = {
@@ -431,9 +423,6 @@ static Shortcut shortcuts[] = {
 	#endif // NEWTERM_PATCH
 	#if EXTERNALPIPE_PATCH
 	{ TERMMOD,              XK_U,           externalpipe,    { .v = openurlcmd } },
-	#if EXTERNALPIPEIN_PATCH
-	{ TERMMOD,              XK_M,           externalpipein,  { .v = setbgcolorcmd } },
-	#endif // EXTERNALPIPEIN_PATCH
 	#endif // EXTERNALPIPE_PATCH
 	#if KEYBOARDSELECT_PATCH
 	{ TERMMOD,              XK_Escape,      keyboard_select, { 0 } },

@@ -14,7 +14,7 @@
  * when including this patch.
  * https://st.suckless.org/patches/alpha/
  */
-#define ALPHA_PATCH 0
+#define ALPHA_PATCH 1
 
 /* The alpha focus highlight patch allows the user to specify two distinct opacity values or
  * background colors in order to easily differentiate between focused and unfocused terminal
@@ -33,6 +33,15 @@
  * https://st.suckless.org/patches/anysize/
  */
 #define ANYSIZE_PATCH 0
+
+/* This patch aims to prevent black bars being drawn on the edges of st terminals using the anysize
+ * patch. This generally only occurs when the terminal background color doesn't match the colors
+ * set in st's config.h file, for example when using terminal theming scripts such as base16.
+ * (I have not found this to be working, but adding for reference. May reduce flickering on
+ * terminal resizes.)
+ * https://github.com/connor-brooks/st-anysize-nobar
+ */
+#define ANYSIZE_NOBAR_PATCH 0
 
 /* A simple variant of the anysize patch that only changes the resize hints to allow the window to
  * be resized to any size.
@@ -208,7 +217,7 @@
 /* This patch allows you to select text on the terminal using keyboard shortcuts.
  * https://st.suckless.org/patches/keyboard_select/
  */
-#define KEYBOARDSELECT_PATCH 0
+#define KEYBOARDSELECT_PATCH 1
 
 /* This patch adds support for drawing ligatures using the Harfbuzz library to transform
  * original text of a single line to a list of glyphs with ligatures included.
@@ -237,14 +246,6 @@
  */
 #define NEWTERM_PATCH 0
 
-/* This patch will set the _MOTIF_WM_HINTS property for the st window which, if the window manager
- * respects it, will show the st window without window decorations.
- *
- * In dwm, if the decoration hints patch is applied, then the st window will start out without a
- * border. In GNOME and KDE the window should start without a window title.
- */
-#define NO_WINDOW_DECORATIONS_PATCH 0
-
 /* Open contents of the clipboard in a user-defined browser.
  * https://st.suckless.org/patches/open_copied_url/
  */
@@ -255,7 +256,7 @@
  *
  * https://www.reddit.com/r/suckless/comments/cc83om/st_open_url/
  */
-#define OPENURLONCLICK_PATCH 0
+#define OPENURLONCLICK_PATCH 1
 
 /* This patch allows you to specify a border that is relative in size to the width of a cell
  * in the terminal.
@@ -272,7 +273,7 @@
 /* Scroll back through terminal output using Shift+{PageUp, PageDown}.
  * https://st.suckless.org/patches/scrollback/
  */
-#define SCROLLBACK_PATCH 0
+#define SCROLLBACK_PATCH 1
 
 /* Scroll back through terminal output using Shift+MouseWheel.
  * This variant depends on SCROLLBACK_PATCH being enabled.
@@ -386,7 +387,7 @@
  * https://github.com/juliusHuelsmann/st-history-vim
  * https://st.suckless.org/patches/vim_browse/
  */
-#define VIM_BROWSE_PATCH 0
+#define VIM_BROWSE_PATCH 1
 
 /* Briefly inverts window content on terminal bell event.
  * https://st.suckless.org/patches/visualbell/
@@ -424,7 +425,7 @@
  * apply the resources named in the resources[] array in config.h.
  * https://st.suckless.org/patches/xresources/
  */
-#define XRESOURCES_PATCH 0
+#define XRESOURCES_PATCH 1
 
 /* This patch adds the ability to reload the Xresources config when a SIGUSR1 signal is received
  * e.g.: killall -USR1 st
