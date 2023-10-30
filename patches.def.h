@@ -187,7 +187,7 @@
  * So they will be used first for glyphs that are absent in the default font.
  * https://st.suckless.org/patches/font2/
  */
-#define FONT2_PATCH 0
+#define FONT2_PATCH 1
 
 /* Hide the X cursor whenever a key is pressed and show it back when the mouse is moved in
  * the terminal window.
@@ -372,7 +372,7 @@
  * scroll program.
  * https://st.suckless.org/patches/universcroll/
  */
-#define UNIVERSCROLL_PATCH 0
+#define UNIVERSCROLL_PATCH 1
 
 /* Vertically center lines in the space available if you have set a larger chscale in config.h
  * https://st.suckless.org/patches/vertcenter/
@@ -392,7 +392,7 @@
 /* Briefly inverts window content on terminal bell event.
  * https://st.suckless.org/patches/visualbell/
  */
-#define VISUALBELL_1_PATCH 0
+#define VISUALBELL_1_PATCH 1
 
 /* Adds support for w3m images.
  * https://st.suckless.org/patches/w3m/
